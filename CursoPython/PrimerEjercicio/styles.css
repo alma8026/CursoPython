@@ -8,75 +8,48 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("imgs/FondoGrietas.jpg");
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header {
-    background-color: #ff6f00;
+    background: linear-gradient(to bottom, #111, #333, #222);
     color: #fff;
     padding: 20px;
     text-align: center;
+    border-bottom: 5px solid #555;
+    border-right: 4px solid #555;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-/* Estilo del footer */
-.social-icons a:nth-child(4) i {
-    color: #833AB4; /* Color de Instagram */
+nav:hover {
+    background: linear-gradient(to bottom, #111, #333, #222);
+    transform: scale(1.05); /* Escala el tamaño del navbar al 105% */
+    transition: transform 0.3s ease; /* Aplica una transición suave */
 }
 
-.social-icons a:nth-child(5) i {
-    color: #00acee; /* Color de Twitter */
-}
-
-.social-icons a:nth-child(6) i {
-    color: #dd4b39; /* Color de Gmail */
-}
-
-/* Ocultar los artículos 7 y 8 cuando el ancho de la pantalla está entre 980px y 1320px */
-@media screen and (min-width: 980px) and (max-width: 1300px) {
-    .article-container:nth-child(7),
-    .article-container:nth-child(8) {
-        display: none;
-    }
-}
-
-/* Estilo para el menú desplegable */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease; /* Añadida transición de visibilidad y opacidad */
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+header h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    padding: 0px 20px;
 }
 
 nav {
-    background-color: #ff9100;
-    padding: 10px;
+    margin: 0 auto;
+    width: 70%;
+    background: #1a1a1a; /* Color de fondo oscuro */
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
 }
 
 nav ul {
@@ -92,13 +65,77 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px 20px; /* Aumenta el padding */
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #ffae42;
+    background-color: #ca8a04; /* Color de fondo en hover */
+}
+
+.post-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.post-image img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para los posts */
+.post-section {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.post-title h1 {
+    color: #fff; /* Color blanco para el texto */
+    font-family: 'Oswald', sans-serif; /* Cambiamos la fuente */
+    font-size: 36px; /* Tamaño del texto */
+    font-weight: 700; /* Grosor de la fuente */
+    text-align: center; /* Centramos el texto */
+    margin-bottom: 60px; /* Aumentamos el espacio en la parte inferior */
+    padding: 10px 20px; /* Añadimos padding para el borde */
+    border: 2px solid #ca8a04; /* Borde sólido */
+    border-radius: 8px; /* Borde redondeado */
+    text-transform: uppercase; /* Convertimos el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+.post-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.post-image-top {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.post-image-top img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .main-content {
@@ -113,37 +150,39 @@ nav ul li a:hover {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Efecto 3D */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición en transform y box-shadow */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .article-container:hover {
-    transform: translateY(5px) translateX(5px); /* Efecto de desplazamiento hacia abajo y hacia la derecha */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Aumentamos la intensidad del efecto 3D */
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
+
 
 .article-title {
     color: #333;
-    margin-bottom: 12%;
+    margin-bottom: 6%;
 }
 
 .article-content {
     color: #666;
-    margin-top: 12%;
-}
-
-.sidebar {
-    background-color: #e0e0e0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    grid-column: 1 / -1;
+    margin-top: 10%;
 }
 
 footer {
-    background-color: #333;
+    background: linear-gradient(to bottom, #4a4e69, #2b2e42);
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    clear: both;
+    padding: 20px;
+    border-top: 4px solid #2b2e42;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+footer:hover {
+    transform: translateY(-4px);
 }

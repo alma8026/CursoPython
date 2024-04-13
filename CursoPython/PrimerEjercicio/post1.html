@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post 2</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Z73J8I7rPuGpylZsM/FTDg4Pk5z9+73q3xxPHDgbv0RT3KEq9HpvSIz0Ii0tC2jE6HRVU7mQyU3m6z0+H9XWEA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Post - Blog de Ejemplo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
-        <h1>Blog de Ejemplo</h1>
-    </header>
-    
-    <!-- Navbar / Menu -->
-    <nav>
-        <ul>
-            <li><a href="blog.html">Inicio</a></li>
-            <li><a href="post1.html">Post 1</a></li>
-            <li><a href="post2.html">Post 2</a></li>
-            <li><a href="post3.html">Post 3</a></li>
-        </ul>
-    </nav>
-
-    <h1>Este es el post número 1</h1>
-
-    <footer>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-google"></i></a>
-        </div>
-        <p>&copy; 2024 Blog de Ejemplo. Todos los derechos reservados.</p>
-    </footer>
-    
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <div class="container">
+        <header>
+            <h1>Blog de Ejemplo</h1>
+            <nav>
+                <ul>
+                    <li><a href="blog.html">Inicio</a></li>
+                    <li><a href="post1.html">Post 1</a></li>
+                    <li><a href="post2.html">Post 2</a></li>
+                    <li><a href="post3.html">Post 3</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <article class="post">
+                <header>
+                    <h2 class="post-title">Título del Post</h2>
+                    <p class="post-date">Fecha del Post</p>
+                </header>
+                <div class="post-content">
+                    <div class="post-section">
+                        <h3>Sección 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo voluptates placeat ipsum fugit explicabo at asperiores aperiam? Aliquam, ipsa ullam?</p>
+                    </div>
+                    <div class="post-section">
+                        <h3>Sección 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo voluptates placeat ipsum fugit explicabo at asperiores aperiam? Aliquam, ipsa ullam?</p>
+                    </div>
+                    <div class="post-section">
+                        <h3>Sección 3</h3>
+                        <div class="post-image"><img src="imgs/vagabond.jpg" alt="Imagen del Post"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo voluptates placeat ipsum fugit explicabo at asperiores aperiam? Aliquam, ipsa ullam?</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+        
+        <footer>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+            </div>
+            <p>&copy; 2024 Blog de Ejemplo. Todos los derechos reservados.</p>
+        </footer>
+    </div>
 </body>
 </html>
