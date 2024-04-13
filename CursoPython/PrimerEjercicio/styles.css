@@ -8,7 +8,10 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("imgs/FondoGrietas.jpg");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("imgs/FondoGrietas.png");
+    background-size: cover; /* Hace que la imagen se ajuste para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed;
     color: #fff;
 }
 
@@ -29,12 +32,6 @@ header {
     transition: transform 0.3s ease;
 }
 
-nav:hover {
-    background: linear-gradient(to bottom, #111, #333, #222);
-    transform: scale(1.05); /* Escala el tamaño del navbar al 105% */
-    transition: transform 0.3s ease; /* Aplica una transición suave */
-}
-
 header h1 {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -42,36 +39,106 @@ header h1 {
     padding: 0px 20px;
 }
 
-nav {
+.navbar {
+    background-color: #222;
+    padding: 10px;
+    width: 80%;
     margin: 0 auto;
-    width: 70%;
-    background: #1a1a1a; /* Color de fondo oscuro */
-    padding: 20px;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 1.5);
+    border-radius: 10px;
+    position: relative; /* Añadimos posición relativa para el contenedor */
+    overflow: hidden; /* Evita que el humo se salga del contenedor */
 }
 
-nav ul {
-    list-style: none;
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, #f87171ec 10%, rgba(255, 255, 255, 0) 30%);
+    animation: smoke 4s infinite linear;
+    opacity: 1;
+    mix-blend-mode: overlay;
+    border-radius: 50%;
+    pointer-events: none; /* Evitar que el humo afecte a la interacción del navbar */
+}
+
+.navbar:hover::before {
+    opacity: 1; /* Hacemos visible el humo al pasar el ratón por encima */
+}
+
+@keyframes smoke {
+    0% {
+        transform: scale(1.4) translate(-10%, -20%);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2) translate(10%, 20%);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.4) translate(-10%, -20%);
+        opacity: 0.6;
+    }
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+.navbar ul li {
+    text-shadow: 4px 4px 8px black;
+    display: inline-block;
+    margin-right: 20px;
+    position: relative; /* Añadido */
 }
 
-nav ul li a {
+.navbar ul li:last-child {
+    margin-right: 0;
+}
+
+.navbar ul li a {
+    color: #ccc;
     text-decoration: none;
-    color: #fff;
-    padding: 10px 20px; /* Aumenta el padding */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative; /* Establecer posición relativa para que los pseudo-elementos sean relativos a este */
 }
 
-nav ul li a:hover {
-    background-color: #ca8a04; /* Color de fondo en hover */
+.navbar ul li a::before,
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Posición ligeramente debajo del texto */
+    width: 100%;
+    height: 2px; /* Grosor de la grieta */
+    background-color: transparent; /* Color de la grieta */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar ul li a::before {
+    transform: scaleX(0); /* Inicialmente, la grieta está cerrada */
+    margin-bottom: 5%;
+}
+
+.navbar ul li a::after {
+    transform: scaleX(0); /* Inicialmente, la grieta está cerrada */
+    margin-bottom: 5%;
+}
+
+.navbar ul li a:hover::before,
+.navbar ul li a:hover::after {
+    background-color: #7f1d1d; /* Color de la grieta al pasar el ratón */
+    box-shadow: 1px 1px 2px black;
+    margin-bottom: 5%;
+    transform: scaleX(1); /* Abrir la grieta al pasar el ratón */
 }
 
 .post-image {
@@ -94,48 +161,36 @@ nav ul li a:hover {
 }
 
 /* Estilos para los posts */
-.post-section {
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+.post-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.post-section, .wide-post-section {
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
 }
 
-.post-title h1 {
-    color: #fff; /* Color blanco para el texto */
-    font-family: 'Oswald', sans-serif; /* Cambiamos la fuente */
-    font-size: 36px; /* Tamaño del texto */
-    font-weight: 700; /* Grosor de la fuente */
-    text-align: center; /* Centramos el texto */
-    margin-bottom: 60px; /* Aumentamos el espacio en la parte inferior */
-    padding: 10px 20px; /* Añadimos padding para el borde */
-    border: 2px solid #ca8a04; /* Borde sólido */
-    border-radius: 8px; /* Borde redondeado */
-    text-transform: uppercase; /* Convertimos el texto a mayúsculas */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
-}
 
-.post-section h3 {
+.post-section, .wide-post-section h2 {
     color: #333;
     margin-bottom: 10px;
 }
 
-.post-section p {
+.post-section, .wide-post-section p {
     color: #666;
     line-height: 1.6;
 }
 
-.post-image-top {
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-}
-
-.post-image-top img {
-    width: 100%;
-    object-fit: cover;
+main {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 2%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-content {
@@ -157,9 +212,8 @@ nav ul li a:hover {
 .article-container:hover {
     cursor: pointer;
     transform: scale(1.05);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
 }
-
 
 .article-title {
     color: #333;
@@ -185,4 +239,5 @@ footer {
 
 footer:hover {
     transform: translateY(-4px);
+    transform: scale(1.05);
 }
