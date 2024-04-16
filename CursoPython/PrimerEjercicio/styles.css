@@ -54,13 +54,14 @@ header h1 {
     content: '';
     position: absolute;
     top: -20%;
-    left: -20%;
+    left: -25%;
     width: 140%;
     height: 140%;
     background-image: radial-gradient(circle, 
     #fca5a5 0%, /* Primer color */
     #b91c1c 25%, /* Segundo color */
-    #57534e 50%/* Cuarto color */
+    #450a0a 75%, /* Tercer color */
+    #494642 50%/* Cuarto color */
 );
     animation: smoke 4s infinite linear;
     opacity: 1;
@@ -69,22 +70,18 @@ header h1 {
     pointer-events: none; /* Evitar que el humo afecte a la interacción del navbar */
 }
 
-.navbar:hover::before {
-    opacity: 1; /* Hacemos visible el humo al pasar el ratón por encima */
-}
-
 @keyframes smoke {
     0% {
         transform: scale(1.4) translate(-10%, -20%);
-        opacity: 0.5;
+        opacity: 1;
     }
     50% {
         transform: scale(1.2) translate(10%, 20%);
-        opacity: 0.8;
+        opacity: 1;
     }
     100% {
         transform: scale(1.4) translate(-10%, -20%);
-        opacity: 0.6;
+        opacity: 1;
     }
 }
 
@@ -176,6 +173,7 @@ header h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1%;
 }
 
 
@@ -230,6 +228,8 @@ main {
 }
 
 .image-section img {
+    
+    margin-bottom: 1%;
     max-width: 100%; 
     height: auto;
     border: 4px solid #ccc;
@@ -296,7 +296,7 @@ main {
 }
 
 .arrow-left:hover, .arrow-right:hover {
-    border: solid 8px #777;
+    border: solid 8px #7f1d1d;
 }
 
 .arrow-left:active, .arrow-right:active {
@@ -313,8 +313,42 @@ main {
     right: 5%;
 }
 
+/* Links */
+.tribute-container {
+    text-align: center; /* Para centrar el enlace */
+}
 
+.tribute-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, padding-right 0.3s; /* Agregamos la transición para el padding-right */
+    display: inline-block;
+    padding: 12px 28px 12px 20px; /* Ajustamos el padding en el lado derecho */
+    border: 2px solid #fff;
+    border-radius: 20px;
+    line-height: 1;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
+.tribute-link:hover {
+    color: #dc2626; /* Cambiamos el color del texto a rojo oscuro */
+    padding-right: 28px; /* Aumentamos el padding en el lado derecho al pasar el ratón */
+}
+
+.tribute-link::before {
+    content: '\2192'; /* Código Unicode para una flecha hacia la derecha */
+    margin-right: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tribute-link:hover::before {
+    opacity: 1;
+}
+
+/* Footer */
 footer {
     background: linear-gradient(to bottom, #4a4e69, #2b2e42);
     color: #fff;
