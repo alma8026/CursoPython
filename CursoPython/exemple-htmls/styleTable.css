@@ -1,0 +1,44 @@
+p {
+    text-shadow: 2px 2px 5px black;
+}
+#bordes {
+    border: 1px solid black;
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    border-radius: 14px;
+}
+#bordes th {
+    border: 3px dashed lawngreen;
+    box-shadow: 2px 2px 4px black;
+    color: whitesmoke;
+    font-weight: 800;
+    vertical-align: middle;
+    border-radius: 15px;
+}
+.col-medio {
+    width: 50%;
+    box-shadow: 2px 2px 4px black;
+}
+.col-lados {
+    width: 25%;
+    box-shadow: 2px 4px 4px black;
+}
+td {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: blanchedalmond;
+}
+#button {
+    background-color: tomato;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    border: 4px outset black;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px black;
+}
+#button:hover{
+    background-color: sienna;
+}
