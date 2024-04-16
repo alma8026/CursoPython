@@ -39,6 +39,7 @@ header h1 {
     padding: 0px 20px;
 }
 
+/* Estilos y animaciones del navbar */
 .navbar {
     background-color: #222;
     padding: 10px;
@@ -46,7 +47,7 @@ header h1 {
     margin: 0 auto;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 1.5);
     border-radius: 10px;
-    position: relative; /* Añadimos posición relativa para el contenedor */
+    position: relative; 
     overflow: hidden; /* Evita que el humo se salga del contenedor */
 }
 
@@ -58,10 +59,10 @@ header h1 {
     width: 140%;
     height: 140%;
     background-image: radial-gradient(circle, 
-    #fca5a5 0%, /* Primer color */
-    #b91c1c 25%, /* Segundo color */
-    #450a0a 75%, /* Tercer color */
-    #494642 50%/* Cuarto color */
+    #fca5a5 0%, 
+    #b91c1c 25%, 
+    #450a0a 75%, 
+    #494642 50%
 );
     animation: smoke 4s infinite linear;
     opacity: 1;
@@ -96,7 +97,7 @@ header h1 {
     text-shadow: 4px 4px 8px black;
     display: inline-block;
     margin-right: 20px;
-    position: relative; /* Añadido */
+    position: relative; 
 }
 
 .navbar ul li:last-child {
@@ -109,7 +110,7 @@ header h1 {
     padding: 10px 20px;
     display: inline-block;
     transition: all 0.3s;
-    position: relative; /* Establecer posición relativa para que los pseudo-elementos sean relativos a este */
+    position: relative; 
 }
 
 .navbar ul li a::before,
@@ -119,27 +120,27 @@ header h1 {
     left: 0;
     bottom: -2px; /* Posición ligeramente debajo del texto */
     width: 100%;
-    height: 2px; /* Grosor de la grieta */
-    background-color: transparent; /* Color de la grieta */
+    height: 2px; /* Grosor de la línea */
+    background-color: transparent; /* Color de la línea */
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .navbar ul li a::before {
-    transform: scaleX(0); /* Inicialmente, la grieta está cerrada */
+    transform: scaleX(0); /* Inicialmente, la línea está cerrada */
     margin-bottom: 5%;
 }
 
 .navbar ul li a::after {
-    transform: scaleX(0); /* Inicialmente, la grieta está cerrada */
+    transform: scaleX(0); /* Inicialmente, la línea está cerrada */
     margin-bottom: 5%;
 }
 
 .navbar ul li a:hover::before,
 .navbar ul li a:hover::after {
-    background-color: #7f1d1d; /* Color de la grieta al pasar el ratón */
+    background-color: #7f1d1d; /* Color de la línea al pasar el ratón */
     box-shadow: 1px 1px 2px black;
     margin-bottom: 5%;
-    transform: scaleX(1); /* Abrir la grieta al pasar el ratón */
+    transform: scaleX(1); /* Abrir la línea al pasar el ratón */
 }
 
 .post-image {
@@ -175,7 +176,6 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 1%;
 }
-
 
 .post-section, .wide-post-section h2 {
     color: #333;
@@ -228,7 +228,7 @@ main {
 }
 
 .image-section img {
-    
+    transition: transform 0.3s ease;
     margin-bottom: 1%;
     max-width: 100%; 
     height: auto;
@@ -237,19 +237,29 @@ main {
     box-shadow: 5px 5px 4px black;
 }
 
-.prev {
-    left: 5%;
+.image-section img.guts-gif:hover, img.vinland-img:hover {
+    transform: scale(1.03);
 }
 
-.next {
-    right: 5%;
+/* Estilos para el nuevo bloque de texto al lado de la imagen (post 3) */
+.image-and-text-section {
+    display: flex;
+    align-items: center;
+}
+
+.image-section {
+    flex: 1;
+}
+
+.text-section {
+    flex: 1;
+    margin-left: 20px; /* Ajusta el margen según sea necesario */
 }
 
 /* Estilos comunes para las flechas */
 .arrow-container-left, .arrow-container-right {
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 45%;
 }
 
 .arrow-left, .arrow-right {
@@ -270,6 +280,7 @@ main {
     top: 37.3%;
     left: 55%;
     background: #999;
+    box-shadow: -3px 4px 3px black;
     transform: translate(-50%, -50%) rotate(45deg);
     transition: all .2s linear;
 }
@@ -282,6 +293,7 @@ main {
     top: 53.8%;
     left: 44%;
     background: #999;
+    box-shadow: 3px 2px 3px black;
     transform: translate(-50%, -50%) rotate(45deg);
     transition: all .2s linear;
 }
@@ -296,7 +308,7 @@ main {
 }
 
 .arrow-left:hover, .arrow-right:hover {
-    border: solid 8px #7f1d1d;
+    border: solid 40px #7f1d1d;
 }
 
 .arrow-left:active, .arrow-right:active {
@@ -305,12 +317,23 @@ main {
 
 /* Estilos específicos para la flecha izquierda */
 .arrow-container-left {
-    left: 5%;
+    left: 4%;
+    transition: transform 0.8s ease;
+}
+
+.arrow-container-left:hover {
+    transform: scale(1.3);
 }
 
 /* Estilos específicos para la flecha derecha */
 .arrow-container-right {
-    right: 5%;
+    right: 4%;
+    transition: transform 0.8s ease;
+
+}
+
+.arrow-container-right:hover {
+    transform: scale(1.3);
 }
 
 /* Links */
