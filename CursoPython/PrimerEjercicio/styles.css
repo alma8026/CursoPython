@@ -62,7 +62,7 @@ header h1 {
         background-image: radial-gradient(circle, 
         #fca5a5 0%, 
         #ef4444 25%, 
-        #991b1b 75%, 
+        #7f1d1d 75%, 
         #494642 50%
     );
         animation: smoke 6s infinite linear;
@@ -376,6 +376,15 @@ main {
 }
 
 /* Footer */
+.social-icons a {
+    color: #fff; /* Color de los iconos */
+    margin-right: 10px; /* Espacio entre los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+}
+
+.social-icons a:hover {
+    color: #ccc; /* Color de los iconos al pasar el cursor sobre ellos */
+}
 footer {
     background: linear-gradient(to bottom, #4a4e69, #2b2e42);
     color: #fff;
