@@ -51,24 +51,26 @@ header h1 {
     overflow: hidden; /* Evita que el humo se salga del contenedor */
 }
 
-.navbar::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: -25%;
-    width: 140%;
-    height: 140%;
-    background-image: radial-gradient(circle, 
-    #fca5a5 0%, 
-    #b91c1c 25%, 
-    #450a0a 75%, 
-    #494642 50%
-);
-    animation: smoke 4s infinite linear;
-    opacity: 1;
-    mix-blend-mode: overlay;
-    border-radius: 20%;
-    pointer-events: none; /* Evitar que el humo afecte a la interacción del navbar */
+@media screen and (min-width: 929px) {
+    .navbar::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: -25%;
+        width: 140%;
+        height: 140%;
+        background-image: radial-gradient(circle, 
+        #fca5a5 0%, 
+        #b91c1c 25%, 
+        #450a0a 75%, 
+        #494642 50%
+    );
+        animation: smoke 5s infinite linear;
+        opacity: 1;
+        mix-blend-mode: overlay;
+        border-radius: 20%;
+        pointer-events: none; /* Evitar que el humo afecte a la interacción del navbar */
+    }
 }
 
 @keyframes smoke {
@@ -140,7 +142,7 @@ header h1 {
     background-color: #7f1d1d; /* Color de la línea al pasar el ratón */
     box-shadow: 1px 1px 2px black;
     margin-bottom: 5%;
-    transform: scaleX(1); /* Abrir la línea al pasar el ratón */
+    transform: scaleX(0.8); /* Abrir la línea al pasar el ratón */
 }
 
 .post-image {
@@ -230,7 +232,7 @@ main {
 .image-section img {
     transition: transform 0.3s ease;
     margin-bottom: 1%;
-    max-width: 100%; 
+    max-width: 90%; 
     height: auto;
     border: 4px solid #ccc;
     border-radius: 20px;
@@ -249,6 +251,7 @@ main {
 
 .image-section {
     flex: 1;
+    text-align: center;
 }
 
 .text-section {
@@ -260,6 +263,7 @@ main {
 .arrow-container-left, .arrow-container-right {
     position: fixed;
     top: 45%;
+    z-index: 500;
 }
 
 .arrow-left, .arrow-right {
@@ -387,4 +391,33 @@ footer {
 footer:hover {
     transform: translateY(-4px);
     transform: scale(1.05);
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        width: 100%;
+    }
+
+    .navbar ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navbar ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .image-section {
+        margin-bottom: 20px;
+    }
+
+    .text-section {
+        margin-left: 0;
+    }
+
+    .arrow-container-left,
+    .arrow-container-right {
+        display: none;
+    }
 }
