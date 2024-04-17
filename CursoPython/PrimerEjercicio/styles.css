@@ -61,11 +61,11 @@ header h1 {
         height: 140%;
         background-image: radial-gradient(circle, 
         #fca5a5 0%, 
-        #b91c1c 25%, 
-        #450a0a 75%, 
+        #ef4444 25%, 
+        #991b1b 75%, 
         #494642 50%
     );
-        animation: smoke 5s infinite linear;
+        animation: smoke 6s infinite linear;
         opacity: 1;
         mix-blend-mode: overlay;
         border-radius: 20%;
@@ -76,7 +76,7 @@ header h1 {
 @keyframes smoke {
     0% {
         transform: scale(1.4) translate(-10%, -20%);
-        opacity: 1;
+        opacity: 0.8;
     }
     50% {
         transform: scale(1.2) translate(10%, 20%);
@@ -84,7 +84,7 @@ header h1 {
     }
     100% {
         transform: scale(1.4) translate(-10%, -20%);
-        opacity: 1;
+        opacity: 0.6;
     }
 }
 
@@ -407,11 +407,14 @@ footer:hover {
     .navbar ul li:last-child {
         margin-bottom: 0;
     }
+    .image-and-text-section {
+        display: block;
+    }
 
     .image-section {
         margin-bottom: 20px;
     }
-
+    
     .text-section {
         margin-left: 0;
     }
