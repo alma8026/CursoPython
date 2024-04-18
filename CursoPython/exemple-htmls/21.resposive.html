@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resposive</title>
+</head>
+<body>
+    <h1>Responsive con source</h1>
+    <!-- <h1 style="font-size: 10vw; text-align: center;">Título reponsive</h1> -->
+    <picture>
+        <!-- De 0px a 600px sale esta -->
+        <source srcset="pageChatGpt.png" media="(max-width: 600px)">
+        <!-- De 601px a 1200px sale esta -->
+        <source srcset="../PrimerEjercicio/imgs/guts-rain.gif" media="(max-width: 1200px)">
+        <!-- En todos los demás casos -->
+        <img src="pageChatGpt.png" width="400px" style="border-radius: 20px;">
+    </picture>
+
+    <style>
+        #container{
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        /* Para especificar el child directo (no los demás) */
+        #container > div {
+            display: inline-block;
+            padding: 5px;
+            border: 1px solid black;
+            background-color: slategray;
+            color: white;
+        }
+        @media screen and (max-width: 600px) {
+            #container {
+                flex-direction: column;
+            }
+        }
+    </style>
+    
+    <h2>Media queries</h2>
+    <div id="container">
+        <div>Col 1</div>
+        <div>Col 2</div>
+        <div>Col 3</div>
+    </div>
+    
+</body>
+</html>

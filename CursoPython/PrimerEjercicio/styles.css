@@ -21,6 +21,10 @@ body {
     padding: 20px;
 }
 
+.seinen:hover {
+    color: #7f1d1d;
+}
+
 header {
     background: linear-gradient(to bottom, #111, #333, #222);
     color: #fff;
@@ -55,36 +59,40 @@ header h1 {
     .navbar::before {
         content: '';
         position: absolute;
-        top: -20%;
+        top: -22%;
         left: -25%;
-        width: 140%;
+        width: 145%;
         height: 140%;
         background-image: radial-gradient(circle, 
-        #fca5a5 0%, 
+        #ffd0d0 0%, 
         #ef4444 25%, 
         #7f1d1d 75%, 
         #494642 50%
     );
-        animation: smoke 6s infinite linear;
+        animation: smoke 8s infinite linear;
         opacity: 1;
         mix-blend-mode: overlay;
         border-radius: 20%;
         pointer-events: none; /* Evitar que el humo afecte a la interacción del navbar */
     }
-}
 
-@keyframes smoke {
-    0% {
-        transform: scale(1.4) translate(-10%, -20%);
-        opacity: 0.8;
-    }
-    50% {
-        transform: scale(1.2) translate(10%, 20%);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.4) translate(-10%, -20%);
-        opacity: 0.6;
+    @keyframes smoke {
+        0% {
+            transform: scale(1.4) translate(-10%, -20%);
+            opacity: 1;
+        }
+        25% {
+            transform: scale(1.2) translate(0%, 20%);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.2) translate(10%, -20%);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.4) translate(-10%, -20%);
+            opacity: 1;
+        }
     }
 }
 
@@ -107,7 +115,7 @@ header h1 {
 }
 
 .navbar ul li a {
-    color: #ccc;
+    color: #f9f9f9;
     text-decoration: none;
     padding: 10px 20px;
     display: inline-block;
@@ -383,7 +391,7 @@ main {
 }
 
 .social-icons a i {
-    transition: transform 0.7s ease;
+    transition: transform 0.5s ease;
 }
 
 .social-icons a i.fa-instagram:hover {
@@ -398,6 +406,10 @@ main {
 }
 .social-icons a i.fa-twitter:hover {
     color: #1DA1F2; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.5);
+}
+.social-icons a i.fa-github:hover {
+    color: #111; /* Color al pasar el raton por el icono instagram */
     transform: scale(1.5);
 }
 footer {
