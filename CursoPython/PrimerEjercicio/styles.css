@@ -382,8 +382,23 @@ main {
     font-size: 24px; /* Tamaño de los iconos */
 }
 
-.social-icons a:hover {
-    color: #ccc; /* Color de los iconos al pasar el cursor sobre ellos */
+.social-icons a i {
+    transition: transform 0.7s ease;
+}
+
+.social-icons a i.fa-instagram:hover {
+    background: linear-gradient(to right, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        background-clip: text;
+        -webkit-text-fill-color: transparent; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.5);
+}
+.social-icons a i.fa-linkedin:hover {
+    color: #0077B5; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.5);
+}
+.social-icons a i.fa-twitter:hover {
+    color: #1DA1F2; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.5);
 }
 footer {
     background: linear-gradient(to bottom, #4a4e69, #2b2e42);
