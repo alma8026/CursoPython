@@ -1,0 +1,108 @@
+.mag-card .mag-content {
+  background: rgb(173,31,163);
+background: linear-gradient(222deg, rgba(173,31,163,1) 5%, rgba(250,70,255,1) 18%, rgba(87,148,153,1) 45%, rgba(66,93,117,1) 71%, rgba(70,75,83,1) 96%);
+  cursor: pointer;
+  .card-title, .card-mag-description {
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+}
+
+@keyframes gradient-mag {
+  0%, 100% {
+    background: radial-gradient(circle at center, rgba(173,31,163,1) 5%, rgba(250,70,255,1) 33%, rgba(113,114,134,1) 45%, rgba(87,148,153,1) 47%, rgba(66,93,117,1) 72%, rgba(213,63,221,1) 100%);
+    background-size: 100% 100%;
+    background-position: 70% 50%;
+}
+25% {
+  background: radial-gradient(circle at center, rgba(173,31,163,1) 5%, rgba(250,70,255,1) 33%, rgba(113,114,134,1) 45%, rgba(87,148,153,1) 47%, rgba(66,93,117,1) 72%, rgba(213,63,221,1) 100%);
+    background-size: 120% 120%;
+    background-position: 20% 60%;
+}
+50% {
+  background: radial-gradient(circle at center, rgba(173,31,163,1) 5%, rgba(250,70,255,1) 33%, rgba(113,114,134,1) 45%, rgba(87,148,153,1) 47%, rgba(66,93,117,1) 72%, rgba(213,63,221,1) 100%);
+    background-size: 140% 140%;
+    background-position: 30% 60%;
+}
+75% {
+  background: radial-gradient(circle at center, rgba(173,31,163,1) 5%, rgba(250,70,255,1) 33%, rgba(113,114,134,1) 45%, rgba(87,148,153,1) 47%, rgba(66,93,117,1) 72%, rgba(213,63,221,1) 100%);
+    background-size: 160% 190%;
+    background-position: 30% 60%;
+}
+}
+
+.card-mag-bg:hover {
+  animation: gradient-mag 0.4s ease infinite;
+}
+
+.card-mag-bg {
+  border-radius: 10px;
+  margin: 3% auto;
+  background: radial-gradient(circle, rgba(173,31,163,1) 5%, rgba(250,70,255,1) 33%, rgba(113,114,134,1) 45%, rgba(87,148,153,1) 47%, rgba(66,93,117,1) 72%, rgba(213,63,221,1) 100%);
+  background-size: 100% 100%;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-mag-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  border-image: url('../imgs/border-mag.jpg') 60 30 round; 
+  pointer-events: none;
+}
+
+.card-mag-bg:hover {
+  transform: scale(1.05);
+}
+
+.card-mag-description {
+  box-shadow: inset 2px 2px 4px black;
+  background: rgb(31,41,55);
+  background: linear-gradient(90deg, rgba(31,41,55,1) 0%, rgba(75,85,99,1) 33%, rgba(120,37,135,1) 67%, rgba(112,26,117,1) 100%);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.type-steel:hover, .type-fairy:hover {
+  transform: scale(1.1);
+}
+
+.type-steel {
+  text-shadow: 2px 2px 4px black;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px #5f5f5f;
+  background: rgb(70,69,101);
+  background: radial-gradient(circle, rgba(70,69,101,1) 0%, rgba(92,122,148,1) 38%, rgba(82,85,105,1) 50%, rgba(121,121,121,1) 62%, rgba(0,30,76,1) 96%);
+  transition: transform 0.4s ease;
+}
+
+.type-fairy {
+  text-shadow: 2px 2px 4px black;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px aqua;
+  background: rgb(173,31,163);
+  background: radial-gradient(circle, rgba(173,31,163,1) 0%, rgba(250,70,255,1) 50%, rgba(98,193,200,1) 67%, rgba(130,195,255,1) 81%, rgba(0,67,171,1) 96%);
+  transition: transform 0.4s ease;
+}
+
+.card-mag-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #5f5f5f;
+  flex-wrap: wrap;
+}
