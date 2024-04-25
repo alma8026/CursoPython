@@ -8,6 +8,12 @@ background: linear-gradient(144deg, rgba(34,35,39,1) 0%, rgba(46,66,95,1) 26%, r
   }
 }
 
+.umb-card .card-image img {
+  transform: scale(0.9);
+  margin-top: -6%;
+  margin-left: -10%;
+}
+
 @keyframes gradient {
   0%, 100% {
     background: radial-gradient(circle at center, rgb(149, 0, 152) 0%, rgb(160, 65, 179) 15%, rgba(252,70,107,1) 29%, rgba(85,35,160,1) 44%, rgba(20,22,105,1) 71%, rgba(135,2,192,1) 98%);

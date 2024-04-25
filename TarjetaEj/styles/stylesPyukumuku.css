@@ -1,26 +1,21 @@
-.jig-card .jig-content {
-  background: rgb(255,150,246);
-background: linear-gradient(228deg, rgba(255,150,246,1) 0%, rgba(178,76,232,1) 40%, rgba(213,136,41,1) 100%);
+.pyu-card .pyu-content {
+ 
   cursor: pointer;
-  .card-title, .card-jig-description {
+  .card-title, .card-pyu-description {
     text-shadow: 2px 2px 4px black;
     color: white;
   }
 }
 
-.jig-card .card-image img {
-  transform: scale(0.65);
-  margin-top: -20%;
+.pyu-card .card-image img {
+  transform: scale(0.85);
+  margin-top: -12%;
 }
 
-.card-jig-bg:hover {
-  background-image: url('../imgs/cotton-candy.jpg');
-}
-
-.card-jig-bg {
+.card-pyu-bg {
   border-radius: 10px;
   margin: 3% auto;
-  background: radial-gradient(circle, rgba(112,182,218,1) 0%, rgba(76,232,230,1) 38%, rgba(253,164,175,1) 74%, rgba(244,63,94,1) 100%);
+  
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -30,7 +25,7 @@ background: linear-gradient(228deg, rgba(255,150,246,1) 0%, rgba(178,76,232,1) 4
   transition: transform 0.3s ease-in-out;
 }
 
-.card-jig-bg::before {
+.card-pyu-bg::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
@@ -39,18 +34,17 @@ background: linear-gradient(228deg, rgba(255,150,246,1) 0%, rgba(178,76,232,1) 4
   border: 8px solid transparent;
   border-radius: 10px; 
   box-sizing: border-box; 
-  border-image: url('../imgs/border-jig.jpg') 60 30 round; 
+  border-image: url('../imgs/border-pyu.jpg') 60 30 round; 
   pointer-events: none;
 }
 
-.card-jig-bg:hover {
+.card-pyu-bg:hover {
   transform: scale(1.05);
 }
 
-.card-jig-description {
+.card-pyu-description {
   box-shadow: inset 2px 2px 4px black;
-  background: rgb(255,150,246);
-background: linear-gradient(66deg, rgba(255,150,246,1) 0%, rgba(178,76,232,1) 39%, rgba(247,165,63,1) 76%, rgba(235,167,82,1) 100%);
+
   border-radius: 10px;
   padding: 2%;
   text-align: center;
@@ -59,7 +53,7 @@ background: linear-gradient(66deg, rgba(255,150,246,1) 0%, rgba(178,76,232,1) 39
   margin-bottom: 20px;
 }
 
-.card-jig-stats {
+.card-pyu-stats {
   display: flex;
   justify-content: space-evenly;
   font-size: 12px;

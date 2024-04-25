@@ -1,0 +1,78 @@
+.gir-card .gir-content {
+  background: rgb(144,141,47);
+background: linear-gradient(58deg, rgba(144,141,47,1) 15%, rgba(0,0,0,1) 44%, rgba(142,70,70,1) 74%, rgba(117,0,0,1) 100%);
+  cursor: pointer;
+  .card-title, .card-gir-description {
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+}
+
+.gir-card .card-image img {
+  transform: scale(0.8);
+  margin-top: -18%;
+}
+
+.card-gir-bg {
+  border-radius: 10px;
+  margin: 3% auto;
+  background: rgb(255,250,87);
+background: radial-gradient(circle, rgba(255,250,87,1) 7%, rgba(240,235,67,1) 16%, rgba(144,141,47,1) 35%, rgba(0,0,0,1) 57%, rgba(142,70,70,1) 77%, rgba(117,0,0,1) 100%);
+  background-size: 100% 100%;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-gir-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  border-image: url('../imgs/border-gir.jpg') 60 30 round; 
+  pointer-events: none;
+}
+
+.card-gir-bg:hover {
+  transform: scale(1.05);
+}
+
+.card-gir-description {
+  box-shadow: inset 2px 2px 4px black;
+  background: rgb(205,201,58);
+background: linear-gradient(222deg, rgba(205,201,58,1) 0%, rgba(140,137,39,1) 15%, rgba(0,0,0,1) 39%, rgba(142,70,70,1) 54%, rgba(117,0,0,1) 78%, rgba(55,0,0,1) 92%);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.type-girgon:hover {
+  transform: scale(1.1);
+}
+
+.type-girgon {
+  text-shadow: 2px 2px 4px black;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px black;
+  background: rgb(117,24,163);
+background: linear-gradient(144deg, rgba(117,24,163,1) 0%, rgba(132,23,71,1) 55%, rgba(12,16,95,1) 100%);
+  transition: transform 0.4s ease;
+}
+
+.card-gir-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #5f5f5f;
+  flex-wrap: wrap;
+}

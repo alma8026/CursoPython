@@ -7,37 +7,43 @@
   }
 }
 
-@keyframes gradient {
+.eev-card .card-image img {
+  transform: scale(0.7);
+  margin-top: -15%;
+  margin-left: -2%;
+}
+
+@keyframes gradient-eev {
   0%, 100% {
-    background: radial-gradient(circle at center, rgb(149, 0, 152) 0%, rgb(160, 65, 179) 15%, rgba(252,70,107,1) 29%, rgba(85,35,160,1) 44%, rgba(20,22,105,1) 71%, rgba(135,2,192,1) 98%);
+    background: radial-gradient(circle at center, rgba(111,120,154,1) 4%, rgba(0,249,253,1) 57%, rgba(108,115,136,1) 89%, rgba(123,156,255,1) 99%);
     background-size: 100% 100%;
     background-position: 70% 50%;
 }
 25% {
-  background: radial-gradient(circle at center, rgba(252,0,255,1) 0%, rgba(230,99,255,1) 15%, rgb(234, 70, 252) 29%, rgba(85,35,160,1) 44%, rgba(20,22,105,1) 71%, rgba(135,2,192,1) 98%);
+  background: radial-gradient(circle at center, rgb(32, 80, 255) 4%, rgba(0,249,253,1) 57%, rgb(246, 246, 247) 89%, rgba(123,156,255,1) 99%);
     background-size: 120% 120%;
     background-position: 20% 60%;
 }
 50% {
-  background: radial-gradient(circle at center, rgba(252,0,255,1) 0%, rgba(230,99,255,1) 15%, rgb(217, 53, 235) 29%, rgba(85,35,160,1) 44%, rgb(33, 35, 144) 71%, rgba(135,2,192,1) 98%);
+  background: radial-gradient(circle at center, rgba(111,120,154,1) 4%, rgba(0,249,253,1) 57%, rgba(108,115,136,1) 89%, rgba(123,156,255,1) 99%);
     background-size: 140% 140%;
     background-position: 30% 60%;
 }
 75% {
-  background: radial-gradient(circle at center, rgba(252,0,255,1) 0%, rgba(230,99,255,1) 15%, rgba(252,70,107,1) 29%, rgba(85,35,160,1) 44%, rgb(34, 35, 147) 71%, rgba(135,2,192,1) 98%);
+  background: radial-gradient(circle at center, rgb(51, 95, 227) 4%, rgba(0,249,253,1) 57%, rgb(240, 244, 255) 89%, rgba(123,156,255,1) 99%);
     background-size: 160% 190%;
     background-position: 30% 60%;
 }
 }
 
 .card-eev-bg:hover {
-  animation: gradient 0.4s ease infinite;
+  animation: gradient-eev 0.4s ease infinite;
 }
 
 .card-eev-bg {
   border-radius: 10px;
   margin: 3% auto;
-  background: radial-gradient(circle at center, rgba(252,0,255,1) 0%, rgba(230,99,255,1) 15%, rgba(252,70,107,1) 29%, rgba(85,35,160,1) 44%, rgba(20,22,105,1) 71%, rgba(135,2,192,1) 98%);
+  background: radial-gradient(circle, rgba(0,254,255,1) 11%, rgba(6,159,217,1) 27%, rgba(0,249,255,1) 60%, rgba(12,52,194,1) 89%, rgba(0,24,139,1) 100%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

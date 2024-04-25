@@ -255,6 +255,12 @@ background: linear-gradient(223deg, rgba(147,91,23,1) 25%, rgba(255,219,35,1) 60
   }
 }
 
+.ent-card .card-image img {
+  transform: scale(0.75);
+  margin-top: -15%;
+  margin-left: -1%;
+}
+
 .card-ent-bg {
   border-radius: 10px;
   margin: 3% auto;

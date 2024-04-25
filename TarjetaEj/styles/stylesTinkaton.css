@@ -11,8 +11,8 @@ background: linear-gradient(45deg, rgba(235,181,252,1) 0%, rgba(240,62,255,1) 52
 .card-tin-bg {
   border-radius: 10px;
   margin: 3% auto;
-  background: rgb(246,218,255);
-  background: radial-gradient(circle, rgba(246,218,255,1) 0%, rgba(167,81,175,1) 34%, rgba(88,209,201,1) 65%, rgba(49,142,189,1) 98%);
+  background: rgb(0,3,94);
+background: linear-gradient(356deg, rgba(0,3,94,1) 0%, rgba(0,5,147,1) 25%, rgba(0,249,253,1) 54%, rgba(238,103,255,1) 89%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

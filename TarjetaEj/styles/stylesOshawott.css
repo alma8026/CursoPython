@@ -1,10 +1,10 @@
 /* Bubbles animation */
-.sui-card:hover {
-  #background-wrap {
+.osh-card:hover {
+  #background-wrap2 {
     display: block;
   }
 }
-#background-wrap {
+#background-wrap2 {
   display: none;
   position: absolute;
   width: 100%;
@@ -239,22 +239,22 @@ width: 180px;
 
 /* End of bubbles animation */
 
-.sui-card .sui-content {
-  background: rgb(0,245,255);
-background: radial-gradient(circle, rgba(0,245,255,1) 5%, rgba(0,78,230,1) 41%, rgba(0,86,214,1) 62%, rgba(0,224,255,1) 100%);
+.osh-card .osh-content {
+  background: rgb(53,104,255);
+background: radial-gradient(circle, rgba(53,104,255,1) 23%, rgba(0,189,194,1) 85%, rgba(0,117,255,1) 100%);
   cursor: pointer;
-  .card-title, .card-sui-description {
+  .card-title, .card-osh-description {
     text-shadow: 2px 2px 4px black;
     color: white;
   }
 }
 
-.sui-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -10%;
+.osh-card .card-image img {
+  transform: scale(0.7);
+  margin-top: -15%;
 }
 
-.card-sui-bg {
+.card-osh-bg {
   border-radius: 10px;
   margin: 3% auto;
   background: linear-gradient(299deg, rgba(0,55,189,1) 0%, rgba(0,51,150,1) 22%, rgba(34,99,128,1) 43%, rgba(0,33,82,1) 74%);
@@ -267,7 +267,7 @@ background: radial-gradient(circle, rgba(0,245,255,1) 5%, rgba(0,78,230,1) 41%, 
   transition: transform 0.3s ease-in-out;
 }
 
-.card-sui-bg::before {
+.card-osh-bg::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
@@ -276,15 +276,15 @@ background: radial-gradient(circle, rgba(0,245,255,1) 5%, rgba(0,78,230,1) 41%, 
   border: 8px solid transparent;
   border-radius: 10px; 
   box-sizing: border-box; 
-  border-image: url('../imgs/border-sui.jpg') 60 30 round; 
+  border-image: url('../imgs/border-osh.jpg') 60 30 round; 
   pointer-events: none;
 }
 
-.card-sui-bg:hover {
+.card-osh-bg:hover {
   transform: scale(1.05);
 }
 
-.card-sui-description {
+.card-osh-description {
   box-shadow: inset 2px 2px 4px black;
   background: rgb(0,74,255);
   background: linear-gradient(299deg, rgba(0,74,255,1) 0%, rgba(0,87,255,1) 22%, rgba(62,196,255,1) 43%, rgba(0,70,173,1) 74%);
@@ -296,20 +296,7 @@ background: radial-gradient(circle, rgba(0,245,255,1) 5%, rgba(0,78,230,1) 41%, 
   margin-bottom: 20px;
 }
 
-.type-water:hover {
-  transform: scale(1.1);
-}
-
-.type-water {
-  text-shadow: 2px 2px 4px black;
-  font-size: 14px;
-  box-shadow: 2px 2px 4px black;
-  background: rgb(62,102,255);
-background: linear-gradient(126deg, rgba(62,102,255,1) 0%, rgba(86,144,184,1) 25%, rgba(0,249,253,1) 57%, rgba(83,101,157,1) 89%, rgba(93,91,255,1) 99%);
-  transition: transform 0.4s ease;
-}
-
-.card-sui-stats {
+.card-osh-stats {
   display: flex;
   justify-content: space-evenly;
   font-size: 12px;

@@ -1,10 +1,10 @@
 /* Bubbles animation */
-.sui-card:hover {
-  #background-wrap {
+.squ-card:hover {
+  #background-wrap3 {
     display: block;
   }
 }
-#background-wrap {
+#background-wrap3 {
   display: none;
   position: absolute;
   width: 100%;
@@ -239,22 +239,22 @@ width: 180px;
 
 /* End of bubbles animation */
 
-.sui-card .sui-content {
-  background: rgb(0,245,255);
-background: radial-gradient(circle, rgba(0,245,255,1) 5%, rgba(0,78,230,1) 41%, rgba(0,86,214,1) 62%, rgba(0,224,255,1) 100%);
+.squ-card .squ-content {
+  background: rgb(0,222,223);
+background: radial-gradient(circle, rgba(0,222,223,1) 0%, rgba(0,114,227,1) 31%, rgba(0,122,185,1) 66%, rgba(0,22,159,1) 100%);
   cursor: pointer;
-  .card-title, .card-sui-description {
+  .card-title, .card-squ-description {
     text-shadow: 2px 2px 4px black;
     color: white;
   }
 }
 
-.sui-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -10%;
+.squ-card .card-image img {
+  transform: scale(0.7);
+  margin-top: -14%;
 }
 
-.card-sui-bg {
+.card-squ-bg {
   border-radius: 10px;
   margin: 3% auto;
   background: linear-gradient(299deg, rgba(0,55,189,1) 0%, rgba(0,51,150,1) 22%, rgba(34,99,128,1) 43%, rgba(0,33,82,1) 74%);
@@ -267,7 +267,7 @@ background: radial-gradient(circle, rgba(0,245,255,1) 5%, rgba(0,78,230,1) 41%, 
   transition: transform 0.3s ease-in-out;
 }
 
-.card-sui-bg::before {
+.card-squ-bg::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
@@ -276,18 +276,18 @@ background: radial-gradient(circle, rgba(0,245,255,1) 5%, rgba(0,78,230,1) 41%, 
   border: 8px solid transparent;
   border-radius: 10px; 
   box-sizing: border-box; 
-  border-image: url('../imgs/border-sui.jpg') 60 30 round; 
+  border-image: url('../imgs/border-squ.jpg') 60 30 round; 
   pointer-events: none;
 }
 
-.card-sui-bg:hover {
+.card-squ-bg:hover {
   transform: scale(1.05);
 }
 
-.card-sui-description {
+.card-squ-description {
   box-shadow: inset 2px 2px 4px black;
-  background: rgb(0,74,255);
-  background: linear-gradient(299deg, rgba(0,74,255,1) 0%, rgba(0,87,255,1) 22%, rgba(62,196,255,1) 43%, rgba(0,70,173,1) 74%);
+  background: rgb(53,104,255);
+background: linear-gradient(110deg, rgba(53,104,255,1) 0%, rgba(0,137,208,1) 33%, rgba(148,87,0,1) 100%);
   border-radius: 10px;
   padding: 2%;
   text-align: center;
@@ -309,7 +309,7 @@ background: linear-gradient(126deg, rgba(62,102,255,1) 0%, rgba(86,144,184,1) 25
   transition: transform 0.4s ease;
 }
 
-.card-sui-stats {
+.card-squ-stats {
   display: flex;
   justify-content: space-evenly;
   font-size: 12px;
