@@ -65,8 +65,8 @@ background: linear-gradient(152deg, rgba(156,236,1,1) 0%, rgba(51,149,0,1) 44%, 
   text-shadow: 2px 2px 4px black;
   font-size: 14px;
   box-shadow: 2px 2px 4px black;
-  background: rgb(208,136,0);
-background: linear-gradient(129deg, rgba(208,136,0,1) 0%, rgba(139,67,0,1) 100%);
+  background: rgb(116,51,12);
+background: linear-gradient(45deg, rgba(116,51,12,1) 0%, rgba(217,119,6,1) 37%, rgba(122,68,0,1) 80%);
   transition: transform 0.4s ease;
 }
 

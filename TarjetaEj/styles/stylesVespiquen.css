@@ -1,5 +1,6 @@
 .ves-card .ves-content {
-  
+  background: rgb(255,234,0);
+background: linear-gradient(45deg, rgba(255,234,0,1) 0%, rgba(202,138,4,1) 44%, rgba(46,46,46,1) 100%);
   cursor: pointer;
   .card-title, .card-ves-description {
     text-shadow: 2px 2px 4px black;
@@ -8,14 +9,15 @@
 }
 
 .ves-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -12%;
+  transform: scale(0.7);
+  margin-top: -16%;
 }
 
 .card-ves-bg {
   border-radius: 10px;
   margin: 3% auto;
-  
+  background: rgb(255,234,0);
+background: linear-gradient(230deg, rgba(255,234,0,1) 0%, rgba(202,138,4,1) 25%, rgba(46,46,46,1) 100%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,7 +46,8 @@
 
 .card-ves-description {
   box-shadow: inset 2px 2px 4px black;
-  
+  background: rgb(255,234,0);
+background: linear-gradient(49deg, rgba(255,234,0,1) 0%, rgba(202,138,4,1) 31%, rgba(46,46,46,1) 96%);
   border-radius: 10px;
   padding: 2%;
   text-align: center;

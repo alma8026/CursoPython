@@ -1,5 +1,6 @@
 .gli-card .gli-content {
-  
+  background: rgb(133,77,14);
+background: linear-gradient(209deg, rgba(133,77,14,1) 0%, rgba(193,90,13,1) 33%, rgba(115,115,115,1) 54%, rgba(61,61,61,1) 100%);
   cursor: pointer;
   .card-title, .card-gli-description {
     text-shadow: 2px 2px 4px black;
@@ -8,14 +9,15 @@
 }
 
 .gli-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -12%;
+  transform: scale(0.7);
+  margin-top: -14%;
 }
 
 .card-gli-bg {
   border-radius: 10px;
   margin: 3% auto;
- 
+  background: rgb(133,77,14);
+  background: radial-gradient(circle, rgba(133,77,14,1) 0%, rgba(193,90,13,1) 51%, rgba(94,94,94,1) 80%, rgba(61,61,61,1) 100%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,7 +46,8 @@
 
 .card-gli-description {
   box-shadow: inset 2px 2px 4px black;
-  
+  background: rgb(133,77,14);
+background: linear-gradient(70deg, rgba(133,77,14,1) 0%, rgba(193,90,13,1) 51%, rgba(94,94,94,1) 80%, rgba(61,61,61,1) 100%);
   border-radius: 10px;
   padding: 2%;
   text-align: center;

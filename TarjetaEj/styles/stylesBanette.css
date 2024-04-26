@@ -1,5 +1,6 @@
 .ban-card .ban-content {
-  
+  background: rgb(82,82,91);
+background: linear-gradient(51deg, rgba(82,82,91,1) 0%, rgba(115,115,115,1) 30%, rgba(163,163,163,1) 61%, rgba(82,82,82,1) 100%);
   cursor: pointer;
   .card-title, .card-ban-description {
     text-shadow: 2px 2px 4px black;
@@ -8,14 +9,15 @@
 }
 
 .ban-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -12%;
+  transform: scale(0.65);
+  margin-top: -20%;
 }
 
 .card-ban-bg {
   border-radius: 10px;
   margin: 3% auto;
- 
+  background: rgb(82,82,91);
+background: radial-gradient(circle, rgba(82,82,91,1) 0%, rgba(115,115,115,1) 23%, rgba(197,134,201,1) 40%, rgba(119,15,124,1) 55%, rgba(36,5,38,1) 81%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,7 +46,8 @@
 
 .card-ban-description {
   box-shadow: inset 2px 2px 4px black;
-  
+  background: rgb(82,82,91);
+background: linear-gradient(45deg, rgba(82,82,91,1) 0%, rgba(115,115,115,1) 20%, rgba(197,134,201,1) 42%, rgba(119,15,124,1) 67%, rgba(36,5,38,1) 95%);
   border-radius: 10px;
   padding: 2%;
   text-align: center;

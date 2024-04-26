@@ -246,6 +246,10 @@
 
 /* General cards styles */
 
+#cardContainer .card {
+  box-shadow: 4px 4px 10px black;
+}
+
 .cards-container {
   display: flex;
   justify-content: center;

@@ -1,5 +1,4 @@
 .shu-card .shu-content {
-  
   cursor: pointer;
   .card-title, .card-shu-description {
     text-shadow: 2px 2px 4px black;
@@ -8,14 +7,15 @@
 }
 
 .shu-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -12%;
+  transform: scale(0.7);
+  margin-top: -16%;
 }
 
 .card-shu-bg {
   border-radius: 10px;
   margin: 3% auto;
-  
+  background: rgb(220,38,38);
+background: radial-gradient(circle, rgba(220,38,38,1) 0%, rgba(163,230,53,1) 68%, rgba(77,124,15,1) 100%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,7 +44,8 @@
 
 .card-shu-description {
   box-shadow: inset 2px 2px 4px black;
-  
+  background: rgb(220,38,38);
+background: linear-gradient(45deg, rgba(220,38,38,1) 0%, rgba(145,204,49,1) 52%, rgba(77,124,15,1) 100%);
   border-radius: 10px;
   padding: 2%;
   text-align: center;

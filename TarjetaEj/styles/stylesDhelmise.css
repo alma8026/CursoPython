@@ -1,5 +1,6 @@
 .dhe-card .dhe-content {
- 
+  background: rgb(82,82,91);
+  background: radial-gradient(circle, rgba(82,82,91,1) 5%, rgba(115,115,115,1) 19%, rgba(37,37,37,1) 54%, rgba(77,124,15,1) 91%);
   cursor: pointer;
   .card-title, .card-dhe-description {
     text-shadow: 2px 2px 4px black;
@@ -8,14 +9,16 @@
 }
 
 .dhe-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -12%;
+  transform: scale(0.75);
+  margin-top: -16%;
+  margin-left: -6%;
 }
 
 .card-dhe-bg {
   border-radius: 10px;
   margin: 3% auto;
-  
+  background: rgb(209,209,209);
+background: radial-gradient(circle, rgba(209,209,209,1) 15%, rgba(115,115,115,1) 42%, rgba(82,82,91,1) 63%, rgba(77,124,15,1) 80%, rgba(113,63,18,1) 93%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,7 +47,8 @@
 
 .card-dhe-description {
   box-shadow: inset 2px 2px 4px black;
- 
+  background: rgb(37,37,37);
+  background: linear-gradient(103deg, rgba(37,37,37,1) 0%, rgba(82,82,91,1) 23%, rgba(115,115,115,1) 48%, rgba(77,124,15,1) 91%);
   border-radius: 10px;
   padding: 2%;
   text-align: center;
@@ -61,7 +65,8 @@
   text-shadow: 2px 2px 4px black;
   font-size: 14px;
   box-shadow: 2px 2px 4px black;
-  background: green;
+  background: rgb(70,106,15);
+background: linear-gradient(148deg, rgba(70,106,15,1) 16%, rgba(121,153,64,1) 48%, rgba(52,84,11,1) 92%);
   transition: transform 0.4s ease;
 }
 

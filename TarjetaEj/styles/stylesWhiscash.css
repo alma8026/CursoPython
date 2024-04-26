@@ -1,5 +1,6 @@
 .whi-card .whi-content {
-  
+  background: rgb(3,105,161);
+background: linear-gradient(70deg, rgba(3,105,161,1) 0%, rgba(14,165,233,1) 35%, rgba(34,211,238,1) 71%, rgba(30,64,175,1) 100%);
   cursor: pointer;
   .card-title, .card-whi-description {
     text-shadow: 2px 2px 4px black;
@@ -8,14 +9,16 @@
 }
 
 .whi-card .card-image img {
-  transform: scale(0.85);
-  margin-top: -12%;
+  transform: scale(0.75);
+  margin-top: -18%;
+  margin-left: -2%;
 }
 
 .card-whi-bg {
   border-radius: 10px;
   margin: 3% auto;
-  
+  background: rgb(3,105,161);
+background: radial-gradient(circle, rgba(3,105,161,1) 0%, rgba(14,165,233,1) 35%, rgba(34,211,238,1) 71%, rgba(30,64,175,1) 100%);
   background-size: 100% 100%;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,7 +47,8 @@
 
 .card-whi-description {
   box-shadow: inset 2px 2px 4px black;
-  
+  background: rgb(3,105,161);
+background: linear-gradient(238deg, rgba(3,105,161,1) 0%, rgba(14,165,233,1) 35%, rgba(34,211,238,1) 71%, rgba(30,64,175,1) 100%);
   border-radius: 10px;
   padding: 2%;
   text-align: center;
@@ -61,8 +65,8 @@
   text-shadow: 2px 2px 4px black;
   font-size: 14px;
   box-shadow: 2px 2px 4px black;
-  background: brown;
-
+  background: rgb(133,77,14);
+  background: linear-gradient(209deg, rgba(133,77,14,1) 0%, rgba(193,90,13,1) 46%, rgba(113,63,18,1) 100%);
   transition: transform 0.4s ease;
 }
 
