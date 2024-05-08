@@ -1,0 +1,66 @@
+.tin-card .tin-content {
+  background: rgb(235,181,252);
+background: linear-gradient(45deg, rgba(235,181,252,1) 0%, rgba(240,62,255,1) 52%, rgba(0,255,239,1) 100%);
+  cursor: pointer;
+  .card-title, .card-tin-description {
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+}
+
+.card-tin-bg {
+  border-radius: 10px;
+  margin: 3% auto;
+  background: rgb(0,3,94);
+background: linear-gradient(356deg, rgba(0,3,94,1) 0%, rgba(0,5,147,1) 25%, rgba(0,249,253,1) 54%, rgba(238,103,255,1) 89%);
+  background-size: 100% 100%;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tin-card .card-image img {
+  transform: scale(0.7);
+  margin-top: -20%;
+  margin-left: 1%;
+}
+
+.card-tin-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  border-image: url('../imgs/border-tin.jpg') 60 30 round; 
+  pointer-events: none;
+}
+
+.card-tin-bg:hover {
+  transform: scale(1.05);
+}
+
+.card-tin-description {
+  box-shadow: inset 2px 2px 4px black;
+  background: rgb(197,145,214);
+background: linear-gradient(228deg, rgba(197,145,214,1) 0%, rgba(153,60,162,1) 39%, rgba(65,159,153,1) 65%, rgba(32,77,99,1) 98%);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card-tin-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #5f5f5f;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,65 @@
+.gli-card .gli-content {
+  background: rgb(133,77,14);
+background: linear-gradient(209deg, rgba(133,77,14,1) 0%, rgba(193,90,13,1) 33%, rgba(115,115,115,1) 54%, rgba(61,61,61,1) 100%);
+  cursor: pointer;
+  .card-title, .card-gli-description {
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+}
+
+.gli-card .card-image img {
+  transform: scale(0.7);
+  margin-top: -14%;
+}
+
+.card-gli-bg {
+  border-radius: 10px;
+  margin: 3% auto;
+  background: rgb(133,77,14);
+  background: radial-gradient(circle, rgba(133,77,14,1) 0%, rgba(193,90,13,1) 51%, rgba(94,94,94,1) 80%, rgba(61,61,61,1) 100%);
+  background-size: 100% 100%;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-gli-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  border-image: url('../imgs/border-gli.jpg') 60 30 round; 
+  pointer-events: none;
+}
+
+.card-gli-bg:hover {
+  transform: scale(1.05);
+}
+
+.card-gli-description {
+  box-shadow: inset 2px 2px 4px black;
+  background: rgb(133,77,14);
+background: linear-gradient(70deg, rgba(133,77,14,1) 0%, rgba(193,90,13,1) 51%, rgba(94,94,94,1) 80%, rgba(61,61,61,1) 100%);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card-gli-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #5f5f5f;
+  flex-wrap: wrap;
+}

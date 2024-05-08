@@ -1,0 +1,118 @@
+.gen-card .gen-content {
+  background: rgb(80,84,96);
+background: linear-gradient(225deg, rgba(80,84,96,1) 23%, rgba(160,68,172,1) 61%, rgba(68,126,84,1) 100%);
+  cursor: pointer;
+  .card-title, .card-gen-description {
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+}
+
+.gen-card .card-image img {
+  transform: scale(0.6);
+  margin-top: -15%;
+  margin-left: -2%;
+}
+
+@keyframes gradient-gen {
+  0%, 100% {
+    background: radial-gradient(circle at center, rgb(149, 0, 152) 0%, rgb(160, 65, 179) 15%, rgb(15, 213, 248) 29%, rgb(28, 25, 176) 44%, rgba(20,22,105,1) 71%, rgba(135,2,192,1) 98%);
+    background-size: 100% 100%;
+    background-position: 70% 50%;
+}
+25% {
+  background: radial-gradient(circle at center, rgba(252,0,255,1) 0%, rgba(230,99,255,1) 15%, rgb(27, 178, 243) 29%, rgb(28, 25, 176) 44%, rgba(20,22,105,1) 71%, rgba(135,2,192,1) 98%);
+    background-size: 120% 120%;
+    background-position: 20% 60%;
+}
+50% {
+  background: radial-gradient(circle at center, rgba(252,0,255,1) 0%, rgba(230,99,255,1) 15%, rgb(43, 162, 202) 29%, rgb(28, 25, 176) 44%, rgb(33, 35, 144) 71%, rgba(135,2,192,1) 98%);
+    background-size: 140% 140%;
+    background-position: 30% 60%;
+}
+75% {
+  background: radial-gradient(circle at center, rgba(252,0,255,1) 0%, rgba(230,99,255,1) 15%, rgb(34, 200, 189) 29%, rgb(28, 25, 176) 44%, rgb(34, 35, 147) 71%, rgba(135,2,192,1) 98%);
+    background-size: 160% 190%;
+    background-position: 30% 60%;
+}
+}
+
+.card-gen-bg:hover {
+  animation: gradient-gen 0.3s ease infinite;
+}
+
+.card-gen-bg {
+  border-radius: 10px;
+  margin: 3% auto;
+  background: radial-gradient(circle, rgba(235,181,252,1) 0%, rgba(240,62,255,1) 38%, rgba(0,255,239,1) 80%, rgba(0,0,0,1) 100%);
+  background-size: 100% 100%;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-gen-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  border-image: url('../imgs/border-gen.jpg') 60 30 round; 
+  pointer-events: none;
+}
+
+.card-gen-bg:hover {
+  transform: scale(1.05);
+}
+
+.card-gen-description {
+  box-shadow: inset 2px 2px 4px black;
+  background: rgb(80,84,96);
+background: linear-gradient(51deg, rgba(80,84,96,1) 0%, rgba(139,69,148,1) 60%, rgba(89,115,96,1) 100%);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.gen-card .card-image img {
+  margin-top: -20%;
+}
+
+.type-ghost:hover, .type-poison:hover {
+  transform: scale(1.1);
+}
+
+.type-ghost {
+  text-shadow: 2px 2px 4px black;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px black;
+  background: rgb(106,110,122);
+background: radial-gradient(circle, rgba(106,110,122,1) 0%, rgba(68,84,133,1) 50%, rgba(91,91,108,1) 100%);
+  transition: transform 0.4s ease;
+}
+
+.type-poison {
+  text-shadow: 2px 2px 4px black;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px black;
+  background: rgb(80,84,96);
+background: linear-gradient(51deg, rgba(80,84,96,1) 0%, rgba(131,1,147,1) 39%, rgba(18,117,44,1) 100%);
+  transition: transform 0.4s ease;
+}
+
+.card-gen-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #5f5f5f;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,104 @@
+.eev-card .eev-content {
+  background: radial-gradient(circle, rgba(212,212,212,1) 0%, rgba(168,162,158,1) 28%, rgba(249,115,22,1) 54%, rgba(107,114,128,1) 100%);
+  cursor: pointer;
+  .card-title, .card-eev-description {
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+}
+
+.eev-card .card-image img {
+  transform: scale(0.7);
+  margin-top: -15%;
+  margin-left: -2%;
+}
+
+@keyframes gradient-eev {
+  0%, 100% {
+    background: radial-gradient(circle at center, rgba(111,120,154,1) 4%, rgba(0,249,253,1) 57%, rgba(108,115,136,1) 89%, rgba(123,156,255,1) 99%);
+    background-size: 100% 100%;
+    background-position: 70% 50%;
+}
+25% {
+  background: radial-gradient(circle at center, rgb(32, 80, 255) 4%, rgba(0,249,253,1) 57%, rgb(246, 246, 247) 89%, rgba(123,156,255,1) 99%);
+    background-size: 120% 120%;
+    background-position: 20% 60%;
+}
+50% {
+  background: radial-gradient(circle at center, rgba(111,120,154,1) 4%, rgba(0,249,253,1) 57%, rgba(108,115,136,1) 89%, rgba(123,156,255,1) 99%);
+    background-size: 140% 140%;
+    background-position: 30% 60%;
+}
+75% {
+  background: radial-gradient(circle at center, rgb(51, 95, 227) 4%, rgba(0,249,253,1) 57%, rgb(240, 244, 255) 89%, rgba(123,156,255,1) 99%);
+    background-size: 160% 190%;
+    background-position: 30% 60%;
+}
+}
+
+.card-eev-bg:hover {
+  animation: gradient-eev 0.4s ease infinite;
+}
+
+.card-eev-bg {
+  border-radius: 10px;
+  margin: 3% auto;
+  background: radial-gradient(circle, rgba(0,254,255,1) 11%, rgba(6,159,217,1) 27%, rgba(0,249,255,1) 60%, rgba(12,52,194,1) 89%, rgba(0,24,139,1) 100%);
+  background-size: 100% 100%;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-eev-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  border-image: url('../imgs/border-eev.jpg') 60 30 round; 
+  pointer-events: none;
+}
+
+.card-eev-bg:hover {
+  transform: scale(1.05);
+}
+
+.card-eev-description {
+  box-shadow: inset 2px 2px 4px black;
+  background: rgb(194,65,12);
+background: linear-gradient(159deg, rgba(194,65,12,1) 13%, rgba(217,119,6,1) 30%, rgba(168,162,158,1) 53%, rgba(194,65,12,1) 73%, rgba(107,114,128,1) 100%);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.type-normal:hover {
+  transform: scale(1.1);
+}
+
+.type-normal {
+  text-shadow: 2px 2px 4px black;
+  font-size: 14px;
+  box-shadow: 2px 2px 4px black;
+  background: rgb(71,85,105);
+  background: linear-gradient(159deg, rgba(71,85,105,1) 0%, rgba(168,162,158,1) 18%, rgba(82,82,82,1) 49%, rgba(107,114,128,1) 100%);
+  transition: transform 0.4s ease;
+}
+
+.card-eev-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #5f5f5f;
+  flex-wrap: wrap;
+}

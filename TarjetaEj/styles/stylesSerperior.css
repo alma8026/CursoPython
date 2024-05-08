@@ -1,0 +1,67 @@
+.ser-card .ser-content {
+  background: rgb(70,106,15);
+background: radial-gradient(circle, rgba(70,106,15,1) 0%, rgba(152,194,79,1) 46%, rgba(77,124,15,1) 86%, rgba(41,0,0,1) 100%);
+  cursor: pointer;
+  .card-title, .card-ser-description {
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+}
+
+.ser-card .card-image img {
+  transform: scale(0.65);
+  margin-top: -18%;
+  margin-left: -2%;
+}
+
+.card-ser-bg {
+  border-radius: 10px;
+  margin: 3% auto;
+  background: rgb(70,106,15);
+background: linear-gradient(38deg, rgba(70,106,15,1) 0%, rgba(152,194,79,1) 46%, rgba(77,124,15,1) 64%, rgba(250,204,21,1) 84%, rgba(41,0,0,1) 100%);
+  background-size: 100% 100%;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-ser-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 8px solid transparent;
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  border-image: url('../imgs/border-ser.jpg') 60 30 round; 
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.card-ser-bg:hover {
+  transform: scale(1.05);
+}
+
+.card-ser-description {
+  box-shadow: inset 2px 2px 4px black;
+  background: rgb(70,106,15);
+background: linear-gradient(152deg, rgba(70,106,15,1) 0%, rgba(152,194,79,1) 31%, rgba(77,124,15,1) 53%, rgba(250,204,21,1) 72%, rgba(41,0,0,1) 100%);
+  border-radius: 10px;
+  padding: 2%;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card-ser-stats {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #5f5f5f;
+  flex-wrap: wrap;
+}
