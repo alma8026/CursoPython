@@ -1,0 +1,91 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+    background: rgb(81,151,255);
+    background: linear-gradient(142deg, rgba(81,151,255,1) 0%, rgba(120,255,253,1) 40%, rgba(49,60,255,1) 68%, rgba(0,34,119,1) 100%);
+  margin: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#calculadora td, tr {
+    padding: 3px;
+}
+
+#calculadora tr td input,td button{
+    box-shadow: 2px 2px 4px black;
+}
+
+#calculadora {
+    border-radius: 19px;
+    border: 4px solid black;
+}
+
+#calculadora table{
+	border-collapse: collapse;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+}
+
+#calculadora table{
+	height: 550px;
+    width: 400px;
+}
+
+#calculadora button,
+#calculadora input{
+	width: 100%;
+	height: 100%;
+	font-size: 1em;
+	padding: 10px;
+    border-radius: 10px;
+}
+
+#calculadora input{
+	padding: 15px;
+	color: white;
+	border: none;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+#calculadora input:focus{
+	outline: none;
+}
+
+#calculadora button{
+	background-color: rgba(0, 0, 0, .4);
+	border: none;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#calculadora button:hover{
+	background-color: rgba(0, 0, 0, .5);
+}
+
+#calculadora button:focus{
+	outline: none;
+}
+
+#calculadora button.operacion{
+	background-color: crimson;
+}
+#calculadora button.operacion:hover{
+	background-color: rgb(175, 16, 48);
+}
+
+#calculadora button.operacion#restar,
+#calculadora button.operacion#igual,
+#calculadora button.operacion#clear{
+	background-color: steelblue;
+}
+
+#calculadora button.operacion#restar:hover,
+#calculadora button.operacion#igual:hover,
+#calculadora button.operacion#clear:hover{
+	background-color: rgb(62, 117, 161);
+}
