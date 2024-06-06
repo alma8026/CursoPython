@@ -1,12 +1,13 @@
+# %%
 hola='texto asdasdasd'
 
 print('text: ' + hola)
-
+# %%
 if 5>2 and 4>5: 
     print('e verda') 
 else: 
     print('no')
-
+# %%
 if 5>2 or 4>5: 
     print('e verda') 
 else: 
@@ -19,7 +20,7 @@ def a():
     if fols==False: return 'hola'
 myvar__var = a()
 print(myvar__var)
-
+# %%
 a = "Hello, Worlda!"
 print(len(a))
 

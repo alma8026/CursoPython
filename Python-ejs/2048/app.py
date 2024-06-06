@@ -1,3 +1,4 @@
+# %%
 import pygame
 import random
 
@@ -140,7 +141,7 @@ def move_right():
 
 # Función para manejar los eventos de teclado
 def handle_events():
-    global running, grid, game_over, previous_grid
+    global running, grid, game_over, previous_grid, won
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -159,7 +160,7 @@ def handle_events():
                 move_right()
                 previous_grid.append([row[:] for row in grid])  # Agregar la cuadrícula actual al historial
             elif event.key == pygame.K_r:
-                if game_over:
+                if game_over or won:
                     reset_game()
             elif event.key == pygame.K_q:
                 pygame.quit()
@@ -168,7 +169,6 @@ def handle_events():
                 if len(previous_grid) > 1:  # Verificar que haya al menos dos cuadrículas en el historial
                     previous_grid.pop()  # Eliminar la cuadrícula actual del historial
                     grid = [row[:] for row in previous_grid[-1]]  # Restaurar la cuadrícula al estado anterior en el historial
-
 
 # Función para verificar si el juego ha terminado
 def is_game_over():
@@ -188,7 +188,7 @@ def has_won():
     for x in range(GRID_SIZE):
         for y in range(GRID_SIZE):
             if grid[x][y] == 2048:
-                            return True
+                return True
     return False
 
 # Función para mostrar la pantalla de perder
@@ -207,22 +207,20 @@ def show_game_over():
     screen.blit(text_quit, quit_rect)
     pygame.display.flip()
 
-
 # Función para mostrar la pantalla de ganar
 def show_win():
+    screen.fill(BACKGROUND_COLOR)
     font = pygame.font.Font(None, 48)
     text = font.render("You Win!", True, (255, 255, 255))
-    text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+    text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 50))
     screen.blit(text, text_rect)
-    pygame.display.flip()
-
-# Función para mostrar el menú al perder
-def show_game_over_menu():
-    font = pygame.font.Font(None, 24)
+    font = pygame.font.Font(None, 36)
     text_restart = font.render("Press 'R' to restart", True, (255, 255, 255))
     text_quit = font.render("Press 'Q' to quit", True, (255, 255, 255))
-    screen.blit(text_restart, (10, HEIGHT - 40))
-    screen.blit(text_quit, (WIDTH - 130, HEIGHT - 40))
+    restart_rect = text_restart.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 20))
+    quit_rect = text_quit.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 50))
+    screen.blit(text_restart, restart_rect)
+    screen.blit(text_quit, quit_rect)
     pygame.display.flip()
 
 # Inicializar la cuadrícula
@@ -232,11 +230,12 @@ add_new_number()
 
 # Función para reiniciar el juego
 def reset_game():
-    global grid, game_over, previous_grid
+    global grid, game_over, previous_grid, won
     grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]
     add_new_number()
     add_new_number()
     game_over = False
+    won = False
     previous_grid = [grid[:]]  # Reiniciar el historial con la cuadrícula inicial
 
 # Inicializar la cuadrícula y el historial
@@ -244,6 +243,7 @@ grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]
 add_new_number()
 add_new_number()
 previous_grid = [grid[:]]
+won = False
 
 # Diccionario de descripciones de los controles
 CONTROL_TEXT = {
@@ -269,7 +269,6 @@ while running:
 
     draw_background()
     
-
     for y in range(GRID_SIZE):
         for x in range(GRID_SIZE):
             if grid[x][y] != 0:
@@ -286,7 +285,6 @@ while running:
 
     if is_game_over():
         show_game_over()
-        show_game_over_menu()
         game_over = True
         while game_over:
             for event in pygame.event.get():
@@ -295,15 +293,24 @@ while running:
                     quit()
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_r:
-                        grid = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]
-                        add_new_number()
-                        add_new_number()
-                        game_over = False
-                        running = True  # Reinicia el bucle principal
+                        reset_game()
                         break
                     elif event.key == pygame.K_q:
                         pygame.quit()
                         quit()
     elif has_won():
         show_win()
-        running = False
+        won = True
+        while won:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_r:
+                        reset_game()
+                        break
+                    elif event.key == pygame.K_q:
+                        pygame.quit()
+                        quit()
+# %%
