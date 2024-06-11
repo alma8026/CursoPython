@@ -1,4 +1,3 @@
-# %%
 import pygame
 import random
 import math
@@ -18,14 +17,13 @@ OUTLINE_COLOR = (187, 173, 160)
 OUTLINE_THICKNESS = 10
 BACKGROUND_COLOR = (205, 192, 180)
 FONT_COLOR = (119, 110, 101)
-GAME_OVER_COLOR = (255, 0, 0)
-VICTORY_COLOR = (0, 255, 0)
 
 FONT = pygame.font.SysFont("comicsans", 60, bold=True)
 MOVE_VEL = 50
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("2048")
+
 
 class Tile:
     COLORS = [
@@ -77,6 +75,7 @@ class Tile:
         self.x += delta[0]
         self.y += delta[1]
 
+
 def draw_grid(window):
     for row in range(1, ROWS):
         y = row * RECT_HEIGHT
@@ -88,7 +87,8 @@ def draw_grid(window):
 
     pygame.draw.rect(window, OUTLINE_COLOR, (0, 0, WIDTH, HEIGHT), OUTLINE_THICKNESS)
 
-def draw(window, tiles, state):
+
+def draw(window, tiles):
     window.fill(BACKGROUND_COLOR)
 
     for tile in tiles.values():
@@ -96,36 +96,8 @@ def draw(window, tiles, state):
 
     draw_grid(window)
 
-    if state == "lost":
-        draw_game_over(window)
-    elif state == "won":
-        draw_victory(window)
-
     pygame.display.update()
 
-def draw_game_over(window):
-    text = FONT.render("GAME OVER", 1, GAME_OVER_COLOR)
-    text_restart = FONT.render("Press R to restart", 1, FONT_COLOR)
-
-    # Calcular la posición del texto
-    text_x = WIDTH / 2 - text.get_width() / 2
-    text_y = HEIGHT / 2 - text.get_height() / 2
-    restart_x = WIDTH / 2 - text_restart.get_width() / 2
-    restart_y = HEIGHT / 2 + text.get_height() / 2  # Separar el texto de "Press R" un poco de "GAME OVER"
-
-    # Dibujar un rectángulo semitransparente detrás del texto
-    overlay_rect = pygame.Rect(0, 0, WIDTH, HEIGHT)
-    pygame.draw.rect(window, (0, 0, 0, 0.4), overlay_rect)
-
-    # Dibujar el texto
-    window.blit(text, (text_x, text_y))
-    window.blit(text_restart, (restart_x, restart_y))
-
-
-
-def draw_victory(window):
-    text = FONT.render("YOU WON!", 1, VICTORY_COLOR)
-    window.blit(text, (WIDTH / 2 - text.get_width() / 2, HEIGHT / 2 - text.get_height() / 2))
 
 def get_random_pos(tiles):
     row = None
@@ -138,6 +110,7 @@ def get_random_pos(tiles):
             break
 
     return row, col
+
 
 def move_tiles(window, tiles, clock, direction):
     updated = True
@@ -223,37 +196,40 @@ def move_tiles(window, tiles, clock, direction):
 
     return end_move(tiles)
 
+
 def end_move(tiles):
     if len(tiles) == 16:
-        # Check if player won
-        for tile in tiles.values():
-            if tile.value == 2048:
-                return "won"
         return "lost"
 
-    row, col = get_random_pos(tiles)
-    tiles[f"{row}{col}"] = Tile(random.choice([2, 4]), row, col)
-    return "continue"
+    # Check if any moves are possible
+    for direction in ["left", "right", "up", "down"]:
+        if move_tiles(WINDOW, tiles.copy(), pygame.time.Clock(), direction) != "lost":
+            return "continue"
+
+    return "won"
+
 
 def update_tiles(window, tiles, sorted_tiles):
     tiles.clear()
     for tile in sorted_tiles:
         tiles[f"{tile.row}{tile.col}"] = tile
 
-    draw(window, tiles, "continue")
+    draw(window, tiles)
+
 
 def generate_tiles():
     tiles = {}
     for _ in range(2):
         row, col = get_random_pos(tiles)
-        tiles[f"{row}{col}"] = Tile(2, row, col)
+        tiles[f"{row}{col}"] = Tile(random.choice([2, 4]), row, col)
 
     return tiles
+
 
 def main(window):
     clock = pygame.time.Clock()
     run = True
-    game_state = "continue"
+
     tiles = generate_tiles()
 
     while run:
@@ -266,24 +242,42 @@ def main(window):
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    game_state = move_tiles(window, tiles, clock, "left")
-                elif event.key == pygame.K_RIGHT:
-                    game_state = move_tiles(window, tiles, clock, "right")
-                elif event.key == pygame.K_UP:
-                    game_state = move_tiles(window, tiles, clock, "up")
-                elif event.key == pygame.K_DOWN:
-                    game_state = move_tiles(window, tiles, clock, "down")
-                elif event.key == pygame.K_r and game_state in ["lost", "won"]:
-                    tiles = generate_tiles()
-                    game_state = "continue"
-                elif event.key == pygame.K_q:
-                    run = False
+                    result = move_tiles(window, tiles, clock, "left")
+                    if result != "continue":
+                        if result == "won":
+                            print("You won!")
+                        else:
+                            print("Game over!")
+                        run = False
+                if event.key == pygame.K_RIGHT:
+                    result = move_tiles(window, tiles, clock, "right")
+                    if result != "continue":
+                        if result == "won":
+                            print("You won!")
+                        else:
+                            print("Game over!")
+                        run = False
+                if event.key == pygame.K_UP:
+                    result = move_tiles(window, tiles, clock, "up")
+                    if result != "continue":
+                        if result == "won":
+                            print("You won!")
+                        else:
+                            print("Game over!")
+                        run = False
+                if event.key == pygame.K_DOWN:
+                    result = move_tiles(window, tiles, clock, "down")
+                    if result != "continue":
+                        if result == "won":
+                            print("You won!")
+                        else:
+                            print("Game over!")
+                        run = False
 
-        draw(window, tiles, game_state)
+        draw(window, tiles)
 
     pygame.quit()
 
+
 if __name__ == "__main__":
     main(WINDOW)
-
-# %%
