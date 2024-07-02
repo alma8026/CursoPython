@@ -8,3 +8,6 @@ class MiUser(models.Model):
     edad = models.IntegerField()
     es_admin = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name = "Mi Usuario"
+        verbose_name_plural = "Mis Usuarios"
